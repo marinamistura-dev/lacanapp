@@ -21,7 +21,7 @@ Esta es una aplicación de Streamlit diseñada para sostener un diálogo de orie
    ```
 
 ## Ejecución
-1. Configurar la clave de API de Google Gemini (vía `.env`, la variable de entorno `GEMINI_API_KEY` o en la barra lateral de la app).
+1. Configurar la clave de API de Groq (vía `.env`, la variable de entorno `GROQ_API_KEY` o en la barra lateral de la app).
 2. Ejecutar Streamlit:
    ```bash
    streamlit run app.py
@@ -29,4 +29,4 @@ Esta es una aplicación de Streamlit diseñada para sostener un diálogo de orie
 
 ## Requisitos
 - Python 3.8+
-- Google Gemini API Key
+- Groq API Key
