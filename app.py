@@ -25,7 +25,7 @@ if "last_response_p1" not in st.session_state:
     st.session_state.last_response_p1 = None
 
 if "api_key" not in st.session_state:
-    st.session_state.api_key = os.getenv("GEMINI_API_KEY", "")
+    st.session_state.api_key = os.getenv("GROQ_API_KEY", "")
 
 def show_disclaimer():
     st.title("Lacanapp")
@@ -44,7 +44,7 @@ def process_input(prompt):
     api_key = st.session_state.api_key
     
     if not api_key:
-        st.error("Por favor, configure su API Key de Google Gemini en la barra lateral.")
+        st.error("Por favor, configure su API Key de Groq en la barra lateral.")
         return
 
     with st.spinner("El analista está puntuando su discurso..."):
@@ -86,7 +86,7 @@ def main():
     
     with st.sidebar:
         st.title("Configuración")
-        st.session_state.api_key = st.text_input("Gemini API Key", value=st.session_state.api_key, type="password")
+        st.session_state.api_key = st.text_input("Groq API Key", value=st.session_state.api_key, type="password")
         st.info(f"Packs completados: {len(st.session_state.packs)}/3")
         if st.session_state.current_step != "FINISHED":
             st.write(f"Esperando: {'Respuesta inicial' if st.session_state.current_step == 'P1' else 'Aclaración'}")
