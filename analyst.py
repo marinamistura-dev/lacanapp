@@ -11,7 +11,7 @@ REGLAS CRÍTICAS:
 4. Mantén la posición de "muerto" (en el sentido del bridge), permitiendo que el deseo del analizante circule.
 5. Sigue estrictamente la estructura de 3 packs dobles y una interpretación final."""
 
-MODEL_NAME = "llama-3.1-70b-versatile"
+MODEL_NAME = "llama-3.3-70b-versatile"
 
 def get_client(api_key=None):
     key = api_key or os.getenv("GROQ_API_KEY")
