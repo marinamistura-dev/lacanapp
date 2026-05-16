@@ -22,7 +22,7 @@ def configure_genai(api_key=None):
 def get_model(api_key=None):
     if configure_genai(api_key):
         return genai.GenerativeModel(
-            model_name="models/gemini-flash-latest",
+            model_name="models/gemini-2.0-flash",
             system_instruction=SYSTEM_PROMPT
         )
     return None
@@ -41,7 +41,7 @@ Analiza el mensaje del usuario. Identifica un término disonante o simbólico. N
         response = model.generate_content(prompt)
         return response.text
     except exceptions.NotFound:
-        return "Error: El modelo 'gemini-flash-latest' no fue encontrado. Verifique la disponibilidad del modelo."
+        return "Error: El modelo 'gemini-2.0-flash' no fue encontrado. Verifique la disponibilidad del modelo."
     except Exception as e:
         return f"Error en la comunicación con el analista: {str(e)}"
 
@@ -61,7 +61,7 @@ Considera este mensaje (P2) y el anterior (P1). ¿Cómo cambia el sentido de P1 
         response = model.generate_content(prompt)
         return response.text
     except exceptions.NotFound:
-        return "Error: El modelo 'gemini-flash-latest' no fue encontrado."
+        return "Error: El modelo 'gemini-2.0-flash' no fue encontrado."
     except Exception as e:
         return f"Error en la comunicación con el analista: {str(e)}"
 
@@ -88,6 +88,6 @@ Revisa los 6 intercambios previos (3 packs). Identifica qué se repite (un rol, 
         response = model.generate_content(prompt)
         return response.text
     except exceptions.NotFound:
-        return "Error: El modelo 'gemini-flash-latest' no fue encontrado."
+        return "Error: El modelo 'gemini-2.0-flash' no fue encontrado."
     except Exception as e:
         return f"Error en la comunicación con el analista: {str(e)}"
